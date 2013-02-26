@@ -17,7 +17,15 @@ namespace ExpressionWalker
         public ExpressionReader(Expression expression)
         {
             _next.Enqueue(expression);
-            _expressionCheckers = new IExpressionChecker[] {new LambdaExpressionChecker(), new BinaryExpressionChecker(), new ParameterExpressionChecker()};
+            _expressionCheckers = new IExpressionChecker[]
+                {
+                    new LambdaExpressionChecker(), 
+                    new BinaryExpressionChecker(), 
+                    new ParameterExpressionChecker(), 
+                    new MethodCallExpressionChecker(), 
+                    new ConstantExpressionChecker(), 
+                    new UnaryExpressionChecker()
+                };
         }
 
         public ExpressionTypes ExpressionType { get; private set; }

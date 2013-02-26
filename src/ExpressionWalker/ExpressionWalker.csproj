@@ -60,11 +60,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryExpressionChecker.cs" />
+    <Compile Include="ConstantExpressionChecker.cs" />
+    <Compile Include="MethodCallExpressionChecker.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_eight_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_five_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_four_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_seven_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_six_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression_three_times.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_methodCallExpression.cs" />
     <Compile Include="ExpressionCheckerBase.cs" />
     <Compile Include="ExpressionReader.cs" />
     <Compile Include="ExpressionTypes.cs" />
     <Compile Include="IExpressionChecker.cs" />
     <Compile Include="LambdaExpressionChecker.cs" />
+    <Compile Include="MethodCallExpressionSpecs\When_reading_a_smethodCallExpression_twice.cs" />
     <Compile Include="ParameterExpressionChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleExpressionSpecs\When_reading_a_simple_expression.cs" />
@@ -72,6 +82,7 @@
     <Compile Include="SimpleExpressionSpecs\When_reading_four_times_on_a_simple_expression.cs" />
     <Compile Include="SimpleExpressionSpecs\When_reading_three_times_on_a_simple_expression.cs" />
     <Compile Include="SimpleExpressionSpecs\When_reading_twice_on_a_simple_expression.cs" />
+    <Compile Include="UnaryExpressionChecker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

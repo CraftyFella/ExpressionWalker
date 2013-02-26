@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace ExpressionWalker
 {
-    internal class LambdaExpressionChecker : ExpressionCheckerBase<LambdaExpression>, IExpressionChecker
+    internal class UnaryExpressionChecker : ExpressionCheckerBase<UnaryExpression>, IExpressionChecker
     {
         protected override IEnumerable<Expression> Children
         {
-            get { yield return Expression.Body; }
+            get { yield return Expression.Operand; }
         }
     }
 }

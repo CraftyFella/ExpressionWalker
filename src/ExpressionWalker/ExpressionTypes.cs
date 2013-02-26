@@ -5,6 +5,9 @@
         LambdaExpression,
         BinaryExpression,
         ParameterExpression,
-        None
+        None,
+        MethodCallExpression,
+        ConstantExpression,
+        UnaryExpression
     }
 }

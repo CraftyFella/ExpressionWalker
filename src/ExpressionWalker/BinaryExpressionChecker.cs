@@ -5,18 +5,13 @@ namespace ExpressionWalker
 {
     internal class BinaryExpressionChecker : ExpressionCheckerBase<BinaryExpression>, IExpressionChecker
     {
-        public bool Check(Expression expression)
+        protected override IEnumerable<Expression> Children
         {
-            var result = expression is BinaryExpression;
-            if (result)
+            get
             {
-                Expressions = new[] { (expression as BinaryExpression).Left, (expression as BinaryExpression).Right };
-                IncreaseDepth = true;
+                yield return Expression.Left;
+                yield return Expression.Right;
             }
-            return result;
         }
-
-        public IEnumerable<Expression> Expressions { get; private set; }
-        public bool IncreaseDepth { get; private set; }
     }
 }

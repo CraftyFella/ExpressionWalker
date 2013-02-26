@@ -5,18 +5,9 @@ namespace ExpressionWalker
 {
     internal class ParameterExpressionChecker : ExpressionCheckerBase<ParameterExpression>, IExpressionChecker
     {
-        public bool Check(Expression expression)
+        protected override IEnumerable<Expression> Children
         {
-            var result = expression is ParameterExpression;
-            if (result)
-            {
-                Expressions = new Expression[0];
-                IncreaseDepth = false;
-            }
-            return result;
+            get { yield break; }
         }
-
-        public IEnumerable<Expression> Expressions { get; private set; }
-        public bool IncreaseDepth { get; private set; }
     }
 }
