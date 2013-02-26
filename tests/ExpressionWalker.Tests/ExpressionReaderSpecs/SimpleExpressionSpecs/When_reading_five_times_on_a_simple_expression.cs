@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace ExpressionWalker.SimpleExpressionSpecs
+namespace ExpressionWalker.Tests.ExpressionReaderSpecs.SimpleExpressionSpecs
 {
     public class When_reading_five_times_on_a_simple_expression
     {

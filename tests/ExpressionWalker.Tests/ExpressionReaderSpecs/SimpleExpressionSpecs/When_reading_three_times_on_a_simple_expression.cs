@@ -3,14 +3,15 @@ using System.Linq.Expressions;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace ExpressionWalker.SimpleExpressionSpecs
+namespace ExpressionWalker.Tests.ExpressionReaderSpecs.SimpleExpressionSpecs
 {
-    public class When_reading_twice_on_a_simple_expression
+    public class When_reading_three_times_on_a_simple_expression
     {
         Establish context = () =>
             {
                 Expression<Func<int, int>> simpleExpression = x => x * x;
                 _sut = new ExpressionReader(simpleExpression);
+                _sut.Read();
                 _sut.Read();
             };
 
@@ -18,11 +19,11 @@ namespace ExpressionWalker.SimpleExpressionSpecs
 
         It should_succeed = () => _result.Should().BeTrue();
 
-        It should_set_token_type_of_binary_expression =
-            () => _sut.ExpressionType.Should().Be(ExpressionTypes.BinaryExpression);
+        It should_set_token_type_of_parameter_expression =
+            () => _sut.ExpressionType.Should().Be(ExpressionTypes.ParameterExpression);
 
         It should_set_depth_to_2 = () => _sut.Depth.Should().Be(2);
-        It should_have_no_value = () => _sut.Value.Should().BeNull();
+        It should_have_value_x = () => _sut.Value.Should().Be("x");
 
         static bool _result;
         static ExpressionReader _sut;

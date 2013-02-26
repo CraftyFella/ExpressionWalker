@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace ExpressionWalker.MethodCallExpressionSpecs
+namespace ExpressionWalker.Tests.ExpressionReaderSpecs.MethodCallExpressionSpecs
 {
     public class When_reading_a_methodCallExpression_three_times
     {

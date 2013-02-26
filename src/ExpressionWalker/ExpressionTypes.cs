@@ -1,6 +1,6 @@
 ﻿namespace ExpressionWalker
 {
-    internal enum ExpressionTypes
+    public enum ExpressionTypes
     {
         LambdaExpression,
         BinaryExpression,

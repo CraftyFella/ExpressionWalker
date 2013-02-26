@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace ExpressionWalker
 {
-    internal class ExpressionReader
+    public class ExpressionReader
     {
         private readonly Queue<Expression> _next = new Queue<Expression>();
         private readonly IEnumerable<IExpressionChecker> _expressionCheckers;

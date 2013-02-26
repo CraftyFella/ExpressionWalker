@@ -3,14 +3,17 @@ using System.Linq.Expressions;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace ExpressionWalker.MethodCallExpressionSpecs
+namespace ExpressionWalker.Tests.ExpressionReaderSpecs.MethodCallExpressionSpecs
 {
-    public class When_reading_a_smethodCallExpression_twice
+    public class When_reading_a_methodCallExpression_five_times
     {
         private Establish context = () =>
             {
                 Expression<Action<int, int>> methodCallExpression = (x, y) => Console.WriteLine("x {0}, y{1}", x, y);
                 _sut = new ExpressionReader(methodCallExpression);
+                _sut.Read();
+                _sut.Read();
+                _sut.Read();
                 _sut.Read();
             };
 
@@ -18,12 +21,10 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
 
         It should_succeed = () => _result.Should().BeTrue();
 
-        It should_set_token_type_of_MethodCallExpression =
-            () => _sut.ExpressionType.Should().Be(ExpressionTypes.MethodCallExpression);
+        It should_set_token_type_of_UnaryExpression = () => _sut.ExpressionType.Should().Be(ExpressionTypes.UnaryExpression);
 
-        It should_set_depth_to_2 = () => _sut.Depth.Should().Be(2);
+        It should_set_depth_to_4 = () => _sut.Depth.Should().Be(4);
         It should_have_no_value = () => _sut.Value.Should().BeNull();
-
         static bool _result;
         static ExpressionReader _sut;
     }

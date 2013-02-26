@@ -3,9 +3,9 @@ using System.Linq.Expressions;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace ExpressionWalker.MethodCallExpressionSpecs
+namespace ExpressionWalker.Tests.ExpressionReaderSpecs.MethodCallExpressionSpecs
 {
-    public class When_reading_a_methodCallExpression_five_times
+    public class When_reading_a_methodCallExpression_eight_times
     {
         private Establish context = () =>
             {
@@ -15,15 +15,18 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
                 _sut.Read();
                 _sut.Read();
                 _sut.Read();
+                _sut.Read();
+                _sut.Read();
+                _sut.Read();
             };
 
         Because of = () => _result = _sut.Read();
 
-        It should_succeed = () => _result.Should().BeTrue();
+        It should_fail = () => _result.Should().BeFalse();
 
-        It should_set_token_type_of_UnaryExpression = () => _sut.ExpressionType.Should().Be(ExpressionTypes.UnaryExpression);
+        It should_set_token_type_of_None = () => _sut.ExpressionType.Should().Be(ExpressionTypes.None);
 
-        It should_set_depth_to_4 = () => _sut.Depth.Should().Be(4);
+        It should_set_depth_to_0 = () => _sut.Depth.Should().Be(0);
         It should_have_no_value = () => _sut.Value.Should().BeNull();
         static bool _result;
         static ExpressionReader _sut;
