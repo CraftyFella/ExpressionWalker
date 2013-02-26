@@ -22,7 +22,7 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
             () => _sut.ExpressionType.Should().Be(ExpressionTypes.LambdaExpression);
 
         It should_set_depth_to_1 = () => _sut.Depth.Should().Be(1);
-
+        It should_have_no_value = () => _sut.Value.Should().BeNull();
         static bool _result;
         static ExpressionReader _sut;
     }

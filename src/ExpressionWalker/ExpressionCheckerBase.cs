@@ -20,10 +20,15 @@ namespace ExpressionWalker
             if (Expression != null)
             {
                 _expressions.AddRange(Children);
+                Value = GetValue();
                 return true;
             }
             return false;
         }
+
+        protected abstract object GetValue();
+
+        public object Value { get; private set; }
 
         protected TExpression Expression
         {

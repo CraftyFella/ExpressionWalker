@@ -32,12 +32,15 @@ namespace ExpressionWalker
 
         public int Depth { get; private set; }
 
+        public object Value { get; private set; }
+
         public bool Read()
         {
             if (!_next.Any())
             {
                 Depth = 0;
                 ExpressionType = ExpressionTypes.None;
+                Value = null;
                 return false;
             }
 
@@ -47,6 +50,7 @@ namespace ExpressionWalker
             checker.Expressions.ToList().ForEach(e => _next.Enqueue(e));
             ExpressionType = checker.ExpressionType;
             Depth += checker.IncreaseDepth ? 1 : 0;
+            Value = checker.Value;
             return true;
             
         }

@@ -25,7 +25,7 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
         It should_set_token_type_of_ParameterExpression = () => _sut.ExpressionType.Should().Be(ExpressionTypes.ParameterExpression);
 
         It should_set_depth_to_4 = () => _sut.Depth.Should().Be(4);
-
+        It should_have_value_x = () => _sut.Value.Should().Be("x");
         static bool _result;
         static ExpressionReader _sut;
     }

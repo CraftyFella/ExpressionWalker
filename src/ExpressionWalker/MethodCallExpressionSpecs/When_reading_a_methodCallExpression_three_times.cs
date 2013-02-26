@@ -9,7 +9,7 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
     {
         private Establish context = () =>
             {
-                Expression<Action<int, int>> methodCallExpression = (x, y) => Console.WriteLine("x {0}, y{1}", x, y);
+                Expression<Action<int, int>> methodCallExpression = (x, y) => Console.WriteLine("x{0}, y{1}", x, y);
                 _sut = new ExpressionReader(methodCallExpression);
                 _sut.Read();
                 _sut.Read();
@@ -23,6 +23,7 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
             () => _sut.ExpressionType.Should().Be(ExpressionTypes.ConstantExpression);
 
         It should_set_depth_to_2 = () => _sut.Depth.Should().Be(2);
+        It should_have_value_x = () => _sut.Value.Should().Be("x{0}, y{1}");
 
         static bool _result;
         static ExpressionReader _sut;

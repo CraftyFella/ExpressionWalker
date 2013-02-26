@@ -9,5 +9,6 @@ namespace ExpressionWalker
         IEnumerable<Expression> Expressions { get; }
         bool IncreaseDepth { get; }
         ExpressionTypes ExpressionType { get; }
+        object Value { get; }
     }
 }

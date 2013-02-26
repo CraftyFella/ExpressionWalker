@@ -24,7 +24,7 @@ namespace ExpressionWalker.MethodCallExpressionSpecs
         It should_set_token_type_of_UnaryExpression = () => _sut.ExpressionType.Should().Be(ExpressionTypes.UnaryExpression);
 
         It should_set_depth_to_4 = () => _sut.Depth.Should().Be(4);
-
+        It should_have_no_value = () => _sut.Value.Should().BeNull();
         static bool _result;
         static ExpressionReader _sut;
     }

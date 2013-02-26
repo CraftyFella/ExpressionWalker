@@ -22,6 +22,7 @@ namespace ExpressionWalker.SimpleExpressionSpecs
             () => _sut.ExpressionType.Should().Be(ExpressionTypes.BinaryExpression);
 
         It should_set_depth_to_2 = () => _sut.Depth.Should().Be(2);
+        It should_have_no_value = () => _sut.Value.Should().BeNull();
 
         static bool _result;
         static ExpressionReader _sut;
