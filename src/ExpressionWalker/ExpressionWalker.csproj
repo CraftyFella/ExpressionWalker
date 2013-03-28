@@ -54,8 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryExpressionChecker.cs" />
+    <Compile Include="ConsoleWriterObserver.cs" />
     <Compile Include="ConstantExpressionChecker.cs" />
+    <Compile Include="ExpressionInfo.cs" />
     <Compile Include="ExpressionWalker.cs" />
+    <Compile Include="IExpressionInfo.cs" />
     <Compile Include="IWriter.cs" />
     <Compile Include="MethodCallExpressionChecker.cs" />
     <Compile Include="ExpressionCheckerBase.cs" />

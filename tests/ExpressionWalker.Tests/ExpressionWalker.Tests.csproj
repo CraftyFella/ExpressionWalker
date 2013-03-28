@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleWriterObserverSpecs\When_two_expression_infos_are_different_instances.cs" />
     <Compile Include="ExpressionInfoSpecs\When_two_expression_infos_are_different_instances.cs" />
     <Compile Include="ExpressionInfoSpecs\When_two_expression_infos_are_same_instance.cs" />
     <Compile Include="ExpressionInfoSpecs\When_two_expression_infos_have_different_depths.cs" />
