@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ExpressionWalker
 {
-    internal class UnaryExpressionChecker : ExpressionCheckerBase<UnaryExpression>, IExpressionChecker
+    internal class MethodCallExpressionChecker : ExpressionCheckerBase<MethodCallExpression>, IExpressionChecker
     {
         protected override object GetValue()
         {
@@ -12,9 +12,7 @@ namespace ExpressionWalker
 
         protected override IEnumerable<Expression> Children
         {
-            get { yield return Expression.Operand; }
+            get { return Expression.Arguments; }
         }
-
-        
     }
 }

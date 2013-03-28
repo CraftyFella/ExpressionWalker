@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ExpressionWalker
 {
-    internal interface IExpressionChecker
+    internal    interface IExpressionChecker
     {
         bool Check(Expression expression);
         IEnumerable<Expression> Expressions { get; }

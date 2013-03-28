@@ -14,8 +14,8 @@ namespace ExpressionWalker
         {
             get
             {
-                yield return Expression.Left;
                 yield return Expression.Right;
+                yield return Expression.Left;
             }
         }
     }
